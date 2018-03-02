@@ -6,17 +6,17 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.content === 'ping') {
-        message.channel.send('pong');
+    if (message.content.toLowerCase() === 'ping') {
+        message.channel.send('Your message has been processed.');
         }
-    if (message.content === 'tomo is gay') {
+    if (message.content.toLowerCase() === 'tomo is gay') {
         message.channel.send('According to my diagnosis, that is correct.');
         }
-   if (message.content === 'I LOVE HUIAN') {
+   if (message.content.toLowerCase() === 'i love huian') {
         message.channel.send('Flattered.');
         }
-   if (message.content === 'How flattered?') {
-    message.channel.send('That is for me to know.');
+   if (message.content.toLowerCase() === 'how flattered?') {
+       message.channel.send('That is for me to know.');
         }
 });
 
