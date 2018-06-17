@@ -13,23 +13,20 @@ client.on("ready", () => {
 
 const prefix = "h!";
 client.on("message", (message) => {
-  // Exit and stop if it's not there
     if(message.author.id !== config.ownerID) return;
-  if (!message.content.startsWith(prefix)) return;
-
-  if (message.content.startsWith(prefix + "ping")) {
-    message.channel.send("pong!");
-  } else
-  if (message.content.startsWith(prefix + "foo")) {
-    message.channel.send("bar!");
-if(message.content.startsWith(config.prefix + "prefix")) {
-  // Gets the prefix from the command (eg. "!prefix +" it will take the "+" from it)
+    if (!message.content.startsWith(prefix)) return;
+    
+    if(message.content.startsWith(config.prefix + "prefix")) {
   let newPrefix = message.content.split(" ").slice(1, 2)[0];
-  // change the configuration in memory
   config.prefix = newPrefix;
-
-  // Now we have to save the file.
   fs.writeFile("./config.json", JSON.stringify(config), (err) => console.error);
+
+    if (message.content.startsWith(prefix + "ping")) {
+        message.channel.send("pong!");
+        } else
+    if (message.content.startsWith(prefix + "foo")) {
+        message.channel.send("bar!");
+        
 }
 });
 
