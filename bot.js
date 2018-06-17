@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on("ready", () => {
-    client.user.setActivity({game: {name: "with my code", type: 0}});
+    client.user.setGame("with my code");
 });
 
 const prefix = "h!";
