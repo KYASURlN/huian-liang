@@ -8,7 +8,7 @@ client.on('ready', () => {
 });
 
 client.on("ready", () => {
-    client.user.setGame("with my code");
+    client.user.setActivity({game: {name: "with my code", type: 0}});
 });
 
 const prefix = "h!";
