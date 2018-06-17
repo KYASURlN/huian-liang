@@ -5,7 +5,7 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
-const prefix = "!";
+const prefix = "h!";
 client.on("message", (message) => {
   // Exit and stop if it's not there
   if (!message.content.startsWith(prefix)) return;
