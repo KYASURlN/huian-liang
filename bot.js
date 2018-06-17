@@ -5,19 +5,17 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
-client.on('message', message => {
-    if (message.content.toLowerCase() === 'ping') {
-        message.channel.send('Your message has been processed.');
-        }
-    if (message.content.toLowerCase() === 'tomo is gay') {
-        message.channel.send('According to my diagnosis, that is correct.');
-        }
-   if (message.content.toLowerCase() === 'i love huian') {
-        message.channel.send('Flattered.');
-        }
-   if (message.content.toLowerCase() === 'how flattered?') {
-       message.channel.send('That is for me to know.');
-        }
+const prefix = "!";
+client.on("message", (message) => {
+  // Exit and stop if it's not there
+  if (!message.content.startsWith(prefix)) return;
+
+  if (message.content.startsWith(prefix + "ping")) {
+    message.channel.send("pong!");
+  } else
+  if (message.content.startsWith(prefix + "foo")) {
+    message.channel.send("bar!");
+  }
 });
 
 // THIS  MUST  BE  THIS  WAY
