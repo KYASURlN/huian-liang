@@ -13,6 +13,7 @@ client.on("ready", () => {
 const prefix = "h!";
 client.on("message", (message) => {
   // Exit and stop if it's not there
+    if(message.author.id !== config.ownerID) return;
   if (!message.content.startsWith(prefix)) return;
 
   if (message.content.startsWith(prefix + "ping")) {
